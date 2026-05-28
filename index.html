@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO APP | Premium Task Manager</title>
+    <meta name="description" content="A gorgeous, premium, glassmorphic To-Do application built with vanilla HTML, CSS, and JS. Features dark/light mode, smooth animations, and persistent storage.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <div class="app-background"></div>
+    <div class="app-container">
+        <main class="main-card">
+            <header class="app-header">
+                <h1 class="app-title">TO DO APP</h1>
+                <button id="theme-toggle" class="btn-icon theme-btn" aria-label="Toggle light/dark theme">
+                    <i data-lucide="moon" class="theme-icon-dark"></i>
+                    <i data-lucide="sun" class="theme-icon-light"></i>
+                </button>
+            </header>
+            <!-- Task Input Form -->
+            <form id="todo-form" class="todo-form">
+                <div class="input-group">
+                    <input type="text" id="todo-input" placeholder="What needs to be done?" autocomplete="off" required>
+                    <button type="submit" class="btn-primary" aria-label="Add task">
+                        <span>Add Task</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Stats Bar -->
+            <section class="stats-bar" aria-label="Task statistics">
+                <div class="stat-card">
+                    <span class="stat-value" id="total-count">0</span>
+                    <span class="stat-label">Total Tasks</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="completed-count">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="pending-count">0</span>
+                    <span class="stat-label">Pending</span>
+                </div>
+            </section>
+
+            <!-- Todo List Section -->
+            <section class="todo-section">
+                <ul id="todo-list" class="todo-list">
+                    <!-- Dynamic tasks will be inserted here -->
+                </ul>
+                <div id="empty-state" class="empty-state">
+                    <i data-lucide="calendar-check" class="empty-icon"></i>
+                    <p class="empty-text">No tasks today! Add one to get started.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>Designed with passion &bull; Antigravity</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
