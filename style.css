@@ -114,10 +114,11 @@ body {
 
 /* Header */
 .app-header {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
+    padding: 5px 0 10px 0;
+    gap: 12px;
 }
 
 .app-title {
@@ -129,6 +130,9 @@ body {
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 8px var(--accent-glow));
     text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding: 0;
 }
 
 /* Theme Toggle Button */
@@ -144,25 +148,23 @@ body {
 }
 
 .theme-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    align-self: flex-start;
     width: 44px;
     height: 44px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     box-shadow: var(--card-shadow);
     color: var(--text-primary);
+    position: relative;
     overflow: hidden;
 }
 
 .theme-btn:hover {
-    transform: translateY(-50%) rotate(15deg) scale(1.05);
+    transform: rotate(15deg) scale(1.05);
 }
 
 .theme-btn:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: scale(0.95);
 }
 
 .theme-icon-dark, .theme-icon-light {
@@ -624,7 +626,9 @@ body {
         gap: 20px;
     }
     .app-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        padding: 0;
     }
     .input-group {
         flex-direction: column;
